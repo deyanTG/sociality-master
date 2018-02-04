@@ -1,0 +1,91 @@
+<div id="main-content" class="container">
+    <div class="row row-main">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Manage API</h3></div>
+            <div class="panel-body">
+                <!--<div class="row">-->
+                <h3>Client API details</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" id="client-id-field" class="form-control"
+                               placeholder="Client Id" required autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="redirect-uri-field" class="form-control"
+                               placeholder="Redirect Uri" required autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="access-token-validity-field" class="form-control"
+                               placeholder="Access Token Validity"
+                               required autofocus>
+                    </div>
+
+                    <!--<div class="form-group">-->
+                        <!--<input type="text" id="refresh-token-validity-field" class="form-control"-->
+                               <!--placeholder="Refresh Token Validity"-->
+                               <!--required autofocus>-->
+                    <!--</div>-->
+                    <div class="input-group-btn">
+                        <button id="btn-add-client" type="submit" class="btn-info btn-sm btn-block admin-buttons-style">
+                            Add API Client
+                        </button>
+                    </div>
+                </form>
+                <!--</div>-->
+                <table class="table" id="table-id">
+                    <thead>
+                    <tr>
+                        <th>Client ID</th>
+                        <th>Redirect URI</th>
+                        <th>Access Token Validity In Seconds</th>
+                        <!--<th>Refresh Token Validity In Seconds</th>-->
+                        <th id="actionTh">
+                            Actions
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each this}}
+                        <tr>
+                            <td class="client-id-value">{{client_id}}</td>
+                            <td class="redirect-uri-value">{{web_server_redirect_uri}}</td>
+                            <td class="access-token-validity-value">{{access_token_validity}}</td>
+                            <!--<td class="refresh-token-validity-value">{{refresh_token_validity}}</td>-->
+                            <td>
+                                <div class="input-group input-group-sm row">
+                                    <div class="input-group-btn">
+                                        <button type="submit"
+                                                class="btn-success btn-sm btn-block row-class admin-buttons-style">
+                                            Generate
+                                            URL
+                                        </button>
+                                    </div>
+                                    <div class="input-group-btn">
+                                        <input class='client-id-hidden-field' type="hidden" value=""/>
+                                        <button type="submit"
+                                                class="btn-warning btn-sm btn-block update-api admin-buttons-style"
+                                                style="margin: 10px">Update API
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            <!--<div hidden>-->
+                <div class="parantOauthContainer">
+                    <div id="infoMessageContainer"></div>
+                    <div id="oauthLinkContainer" style="font-weight: bold"></div>
+                </div>
+            <!--</div>-->
+        </div>
+    </div>
+</div></div>
+</div>

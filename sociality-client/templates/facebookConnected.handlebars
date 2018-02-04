@@ -1,0 +1,29 @@
+{{> top-nav}}
+<div id="main-content" class="container">
+    <div class="row row-main">
+        <!--<div class="container">-->
+        <ol class="breadcrumb">
+            <li><a href="#/facebookFeed">Feed</a></li>
+            <!--<li><a href="#/facebookFriends">Friends</a></li>-->
+            <li><a href="#/facebookProfile">User Profile</a></li>
+            <li><a href="#/facebookSettings">Settings</a></li>
+        </ol>
+
+        <!--{{#if_eq templateType 'facebookFriends'}}-->
+            <!--{{> facebookFriends}}-->
+        <!--{{/if_eq}}-->
+
+        {{#if_eq templateType 'profile'}}
+            {{> profile}}
+        {{/if_eq}}
+
+        {{#if_eq templateType 'facebookFeed'}}
+            {{> facebookFeed}}
+        {{/if_eq}}
+
+        {{#if_eq templateType 'facebookPostSettings'}}
+            {{> facebookPostSettings}}
+        {{/if_eq}}
+
+    </div>
+</div>

@@ -1,0 +1,31 @@
+{{> top-nav}}
+<div id="main-content" class="container">
+    <div class="row row-main">
+        <ol class="breadcrumb">
+            <li><a href="#/listUsers">Users List</a></li>
+            <li><a href="#/manageUser">Manage User</a></li>
+
+            {{#if isAdmin}}
+                <li><a href="#/addAdmin">Add Admin</a></li>
+                <li><a href="#/manageApi">Manage Api</a></li>
+            {{/if}}
+        </ol>
+
+        {{#if_eq templateType 'userList'}}
+            {{> userList}}
+        {{/if_eq}}
+
+        {{#if_eq templateType 'manageUser'}}
+            {{> manageUser}}
+        {{/if_eq}}
+
+        {{#if_eq templateType 'addAdmin'}}
+            {{> addAdmin}}
+        {{/if_eq}}
+
+        {{#if_eq templateType 'manageApi'}}
+            {{> manageApi}}
+        {{/if_eq}}
+
+    </div>
+</div>

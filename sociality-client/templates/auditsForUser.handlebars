@@ -1,0 +1,33 @@
+{{#if audits}}
+    <h4>Recent Actions</h4>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>User</th>
+            <th>Action</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each audits}}
+            <tr>
+                <td>
+                    {{username}}
+                </td>
+                <td>{{actionDescription}}</td>
+                <td>{{createdAt.date}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <hr/>
+    <h4>No Recent Actions</h4>
+{{/if}}
+
+
+
+
+
+
+

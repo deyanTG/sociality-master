@@ -1,0 +1,114 @@
+{{> top-nav}}
+<div id="main-content" class="container">
+    <div class="row row-main">
+        <div class="panel panel-default widget">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Sociality Networks</h3>
+            </div>
+            <div class="panel-body">
+                {{#if entities}}
+                    <div style="clear: both">
+                        {{#if facebook}}
+                            <h4><span class="label label-default">Facebook</span></h4>
+                        {{/if}}
+
+                        {{#if twitter}}
+                            <h4><span class="label label-default">Twitter</span></h4>
+                        {{/if}}
+                    </div>
+                    <div class="text-center">
+                        <form>
+
+                            <div class="form-group">
+                        <textarea placeholder="Please type your post here..." class="form-control" rows="5"
+                                  id="post" required></textarea>
+                            </div>
+                            <!--<div class="row">-->
+                            {{#if facebook}}
+                                <div class="pull-left form-group">
+                                    <!--<label for="facebookGroupsSelection"><h6>Choose Facebook Group</h6></label>-->
+                                    <select id="facebookGroupsSelection" title="Select Facebook Groups"
+                                            class="selectpicker" data-size="5"
+                                            data-actions-box="true"
+                                            data-selected-text-format="count"
+                                            multiple data-width="auto">
+                                        <option id="personalFeedId">Personal Wall</option>
+                                        <option data-divider="true"></option>
+                                        {{#each facebookGroups}}
+                                            <option id="{{id}}">{{name}}</option>
+                                        {{/each}}
+                                    </select>
+                                </div>
+                                <!--</div>-->
+                            {{/if}}
+                            {{#if twitter}}
+                                {{#if facebook}}
+                                <div class="col-md-8">
+                                {{/if}}
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="tokenfield"
+                                           data-limit="7"
+                                           placeholder="Insert hashtags for your tweet"/>
+                                </div>
+                                {{#if facebook}}
+                                </div>
+                                {{/if}}
+                            {{/if}}
+                            <div class="input-group-btn">
+                                <button id="btn-post" type="submit"
+                                        class="btn-info btn-sm btn-block admin-buttons-style pull-right">
+                                    Post
+                                </button>
+                            </div>
+                            <!--</div>-->
+                        </form>
+
+                    </div>
+                {{/if}}
+
+                <ul class="list-group">
+                    <br/>
+
+                    <h4>Personal Timeline</h4>
+
+                    {{#each entities }}
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-2 col-md-1">
+                                    <img src="{{profilePicture}}" class="img-circle img-responsive" alt=""/></div>
+                                <div class="col-xs-10 col-md-11">
+                                    <div>
+                                        <a href="{{link}}">
+                                            {{title}}</a>
+                                        <div class="mic-info">
+                                            By: <a href="{{profileSourceUrl}}">{{creatorName}}</a> on {{date
+                                                creationTime}}
+                                        </div>
+                                    </div>
+                                    <div class="comment-text">
+                                        {{parseTwitterText text}}
+                                    </div>
+                                    {{postPictureHelper postPicture}}
+                                    <div class="pull-right">
+                                        <span class="{{classSocialIcon socialEntityType}}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {{else}}
+                        <div class="alert alert-info">
+                            No activities registered!
+                        </div>
+                    {{/each}}
+                    <div id="moreContentContainer"></div>
+                </ul>
+                {{#if entities}}
+                    <button id="btn-load-more" href="#" class="btn btn-primary btn-sm btn-block" role="button"><span
+                            class="glyphicon glyphicon-refresh"></span> More
+                    </button>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

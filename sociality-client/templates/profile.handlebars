@@ -1,0 +1,48 @@
+<!--<div id="main-content" class="container">-->
+<!--<div class="row row-main">-->
+
+<div class="panel panel-default widget">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            {{#profileChooser profileType}}{{/profileChooser}}</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-2 col-md-1">
+                        <img src="{{profileImageUrl}}" class="img-circle img-responsive" alt=""/></div>
+                    <div class="col-xs-10 col-md-11">
+                        <div>
+                            <div class="mic-info">
+                                <br/>
+                            </div>
+                        </div>
+                        <div class="comment-text">
+                            <a href="{{profileUrl}}"> <b>{{name}}</b></a>
+                        </div>
+                        <div class="pull-right">
+                            <span class="{{classSocialIcon profileType}}"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        <div class="row">
+
+
+            <form id="disconnect" action="{{connectUrl}}" method="post" class="text-center">
+                <input type="hidden" name="token" value="{{token}}"/>
+                <input type="hidden" name="_method" value="delete"/>
+                <input type="submit" class="btn btn-danger btn-large" value="Disconnect"/>
+            </form>
+
+
+        </div>
+
+    </div>
+</div>
+<!--</div>-->
+<!--</div>-->

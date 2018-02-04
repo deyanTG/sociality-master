@@ -1,0 +1,52 @@
+<h4>User Profile</h4>
+{{#if userProfile.socialProfiles}}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Provider</th>
+            <th>Username</th>
+            <th>Display Name</th>
+            <th>Image</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each userProfile.socialProfiles}}
+            <tr>
+                <td>{{provider}}</td>
+                <td>{{../userProfile.userData.username}}</td>
+                <td>{{displayName}}</td>
+                <td><img src="{{imageUrl}}"></td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <table class="table">
+
+        <thead>
+        <tr>
+            <th>Provider</th>
+            <th>Username</th>
+            <th>Display Name</th>
+            <th>Image</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Not connected</td>
+            <td>{{userProfile.userData.username}}</td>
+            <td>None</td>
+            <td>None</td>
+        </tr>
+        </tbody>
+    </table>
+{{/if}}
+
+{{#if isAdmin}}
+    <div class="text-center">
+        <button id="btn-remove-ban" type="button" class="btn btn-success">Allow Access</button>
+        <span style="display:inline-block; width: 5px;"></span>
+        <button id="btn-ban" type="button" class="btn btn-danger" disabled>Deny Access</button>
+    </div>
+{{/if}}

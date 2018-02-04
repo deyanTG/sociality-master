@@ -1,0 +1,21 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            Twitter Settings</h3>
+    </div>
+    <div class="panel-body">
+
+        {{#unless connected}}
+            <div class="alert alert-warning">
+                Twitter not connected to account!
+            </div>
+        {{else}}
+            <div class="checkbox checkbox-slider-md checkbox-slider--b  checkbox-slider-primary">
+                <label>
+                    <input id="twitterOn" type="checkbox"><span><b>Share</b></span>
+                </label>
+            </div>
+        {{/unless}}
+
+    </div>
+</div>

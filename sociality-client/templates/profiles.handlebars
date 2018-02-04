@@ -1,0 +1,120 @@
+{{> top-nav}}
+<div id="main-content" class="container">
+    <div class="row row-main">
+
+        <div class="panel panel-default widget">
+            <div class="panel-heading">
+                <h1 class="panel-title">
+                    User Profile</h1>
+            </div>
+            <div class="panel-body">
+
+                <h3>Update Profile</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" id="username-field" class="form-control"
+                               placeholder="Username"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <input type="password" id="password-field" class="form-control"
+                               placeholder="Password"
+                        >
+                    </div>
+
+                    <hr/>
+                    <div class="form-group">
+                        <input type="text" id="first-name-field" class="form-control"
+                               placeholder="First Name" required autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="last-name-field" class="form-control"
+                               placeholder="Last Name"
+                        >
+                    </div>
+
+                    <div class="input-group-btn">
+                        <button id="btn-update-user" type="submit"
+                                class="btn-info btn-sm btn-block admin-buttons-style">
+                            Update
+                        </button>
+                    </div>
+                </form>
+                <br/>
+
+                <h3>Sociality Profile</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">
+
+                        <div class="row">
+                            <div class="col-xs-2 col-md-1">
+                                <img style="height: 60px"
+                                     class="img-responsive" src="static/brand.jpg"/>
+                            </div>
+                            <div class="col-xs-10 col-md-11">
+                                <div>
+                                    <div class="mic-info">
+                                        <br/>
+                                    </div>
+                                </div>
+                                <div class="comment-text">
+                                    <div class="col-md-4">
+                                        <a href="#/profile"> <b>
+                                            <span id="firstNameContainer">
+                                                {{#if currentUserProfile.firstName}}
+                                                    {{currentUserProfile.firstName}}
+                                                {{/if}}
+                                            </span>
+                                            <span id="lastNameContainer">
+                                                {{#if currentUserProfile.lastName}}
+                                                    {{currentUserProfile.lastName}}
+                                                {{/if}}
+                                            </span>
+                                        </b></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                {{#each socialProfiles}}
+                    <h3>{{#profileChooser profileType}}{{/profileChooser}}</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-2 col-md-1">
+                                    <img src="{{profileImageUrl}}" class="img-circle img-responsive" alt=""/></div>
+                                <div class="col-xs-10 col-md-11">
+                                    <div>
+                                        <div class="mic-info">
+                                            <br/>
+                                        </div>
+                                    </div>
+                                    <div class="comment-text">
+
+                                        <div class="col-md-4">
+                                            <a href="{{profileUrl}}"> <b>{{name}}</b></a>
+                                        </div>
+                                    </div>
+                                    <div class="pull-right">
+                                        <span class="{{classSocialIcon profileType}}"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                {{else}}
+                    <div class="alert alert-info">
+                        Please register at least one account (either <b>Facebook</b> or <b>Twitter</b>) or both!
+                    </div>
+                {{/each}}
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

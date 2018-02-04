@@ -1,0 +1,28 @@
+{{> top-nav}}
+<div id="main-content" class="container">
+    <div class="row row-main">
+        <div class="alert alert-info">
+            <h3>Connect to Facebook</h3>
+
+            <form action="{{connectUrl}}" method="POST">
+                <input
+                        type="hidden" name="scope"
+                        value="user_posts,user_photos,user_managed_groups,publish_actions,manage_pages,publish_pages"/>
+                <input type="hidden" name="token" value="{{token}}"/>
+                <div class="formInfo">
+                    <p>You aren't connected to Facebook yet. Click the button to
+                        connect Sociality with your Facebook account.</p>
+                </div>
+                <p>
+
+                    <button type="submit" class="btn btn-facebook">
+                        <i class="fa fa-facebook"></i> | Connect with Facebook
+                    </button>
+                </p>
+                <label for="postToWall"><input id="postToWall"
+                                               type="checkbox" name="postToWall"/> Tell your friends about
+                    Sociality on your Facebook wall</label>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+{{#each this }}
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-xs-2 col-md-1">
+                <img src="{{profilePicture}}" class="img-circle img-responsive" alt=""/></div>
+            <div class="col-xs-10 col-md-11">
+                <div>
+                    <a href="{{link}}">
+                        {{title}}</a>
+                    <div class="mic-info">
+                        By: <a href="{{profileSourceUrl}}">{{creatorName}}</a> on {{date creationTime}}
+                    </div>
+                </div>
+                <div class="comment-text">
+                    {{parseTwitterText text}}
+                </div>
+                {{postPictureHelper postPicture}}
+                <div class="pull-right">
+                    <span class="{{classSocialIcon socialEntityType}}"></span>
+                </div>
+            </div>
+        </div>
+    </li>
+{{/each}}

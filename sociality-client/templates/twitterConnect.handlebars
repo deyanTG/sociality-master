@@ -1,0 +1,25 @@
+{{> top-nav}}
+<div id="content" class="container">
+    <div class="row row-main">
+        <div class="alert alert-info">
+            <h3>Connect to Twitter</h3>
+            <form action="{{connectUrl}}" method="POST">
+                <input type="hidden" name="token" value="{{token}}"/>
+                <div class="formInfo">
+                    <p>You haven't created any connections with Twitter yet. Click
+                        the button to connect Sociality with your Twitter
+                        account. (You'll be redirected to Twitter where you'll be asked to
+                        authorize the connection.)</p>
+                </div>
+                <p>
+
+                    <button type="submit" class="btn btn-twitter">
+                        <i class="fa fa-twitter"></i> | Connect with Twitter
+                    </button>
+                </p>
+                <label for="postTweet"><input id="postTweet" type="checkbox"
+                                              name="postTweet"/> Post a tweet about connecting with Sociality</label>
+            </form>
+        </div>
+    </div>
+</div>

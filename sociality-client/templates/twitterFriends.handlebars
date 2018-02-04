@@ -1,0 +1,33 @@
+<div id="timeline">
+    <div class="row">
+        <div class="panel panel-default widget">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Twitter Friends</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    {{#each this }}
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-xs-2 col-md-1">
+                                    <img src="{{profileImageUrl}}" class="img-circle img-responsive" alt=""/></div>
+                                <div class="col-xs-10 col-md-11">
+
+                                     <div class="comment-text">
+                                        <p><a href='http://twitter.com/{{screenName}}'>{{screenName}}</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {{else}}
+                        <div class="alert alert-info">
+                            No friends found!
+                        </div>
+                    {{/each}}
+                    <div id="moreContentContainer"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

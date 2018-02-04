@@ -1,0 +1,29 @@
+{{> top-nav}}
+<div id="main-content" class="container">
+    <div class="row row-main">
+
+        <ol class="breadcrumb">
+            <li><a href="#/facebookSettings">Facebook</a></li>
+            <li><a href="#/twitterSettings">Twitter</a></li>
+        </ol>
+
+        {{#if_eq templateType 'facebookPostSettings'}}
+            {{> facebookPostSettings}}
+        {{/if_eq}}
+
+        {{#if_eq templateType 'twitterPostSettings'}}
+            {{> twitterPostSettings}}
+        {{/if_eq}}
+
+        <div class="text-center">
+            <form>
+                <div class="form-group">
+                <textarea placeholder="Please type your post here..." class="form-control" rows="5"
+                          id="post"></textarea>
+                </div>
+                <button id="btn-post" type="submit" class="btn btn-default btn-secondary pull-right">Post</button>
+
+            </form>
+        </div>
+    </div>
+</div>

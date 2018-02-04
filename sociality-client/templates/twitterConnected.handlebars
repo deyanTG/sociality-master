@@ -1,0 +1,34 @@
+{{> top-nav}}
+
+<div id="main-content" class="container">
+    <div class="row row-main">
+        <ol class="breadcrumb">
+            <li><a href="#/twitterTimeline">Timeline</a></li>
+            <li><a href="#/twitterFriends">Friends</a></li>
+            <li><a href="#/twitterFollowers">Followers</a></li>
+            <li><a href="#/twitterProfile">User Profile</a></li>
+            <li><a href="#/twitterSettings">Settings</a></li>
+        </ol>
+
+        {{#if_eq templateType 'profile'}}
+            {{> profile}}
+        {{/if_eq}}
+
+        {{#if_eq templateType 'twitterTimeline'}}
+            {{> twitterTimeline}}
+        {{/if_eq}}
+
+        {{#if_eq templateType 'twitterFriends'}}
+            {{> twitterFriends}}
+        {{/if_eq}}
+
+        {{#if_eq templateType 'twitterFollowers'}}
+            {{> twitterFollowers}}
+        {{/if_eq}}
+
+        {{#if_eq templateType 'twitterPostSettings'}}
+            {{> twitterPostSettings}}
+        {{/if_eq}}
+
+    </div>
+</div>
